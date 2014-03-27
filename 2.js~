@@ -1,0 +1,34 @@
+var Stack = function(){
+	this.array = [] ;
+	this.top = -1 ;
+	this.m = 100000 ;
+} ;
+
+Stack.prototype.push = function(ele) {
+	if(ele < this.m){
+		this.m = ele ;
+	}
+	this.array.push(ele) ;
+	this.top ++ ;
+};
+Stack.prototype.pop = function(){
+	return this.array[this.top --] ;
+} ;
+Stack.prototype.min = function(){
+	return this.m ;
+} ;
+Stack.prototype.toString = function(){
+	var str = "" ;
+	for(var i = 0 ; i <= this.top ; i ++){
+		str += this.array[i].toString() + " " ;
+	}
+	console.log(str) ;
+};
+
+var stack = new Stack() ;
+stack.push(1) ;
+stack.push(3) ;
+stack.push(8) ;
+console.log(stack.min()) ;
+console.log(stack.pop()) ;
+stack.toString() ;
