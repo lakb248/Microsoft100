@@ -1,39 +1,9 @@
+var Stack = require("./stack").Stack ;
 
 var BSTreeNode = function(value,left,right){
 	this.value = value ;
 	this.left = left ;
 	this.right = right ;
-}
-var LinkedNode = function(value,next){
-	this.value = value ;
-	this.next = next ;
-}
-
-var Stack = function(){
-	this.list = [];
-	this.top = -1 ;
-}
-Stack.prototype.push = function(ele) {
-	this.list[++this.top] = ele ;
-};
-Stack.prototype.pop = function(){
-	if(this.top !== -1){
-		var ele = this.list[this.top] ;
-		this.top -- ;
-		return ele ;
-	}else{
-		return null ;
-	}
-} ;
-Stack.prototype.getTop = function(){
-	if(this.top !== -1){
-		return this.list[this.top] ;
-	}else{
-		return null ;
-	}
-} ;
-Stack.prototype.isEmpty = function(){
-	return this.top === -1 ;
 }
 
 
@@ -83,10 +53,13 @@ var postOrder = function(T){
 	}
 }
 
-var left = new BSTreeNode(3,new BSTreeNode(1,null,null),null) ;
-var right = new BSTreeNode(7,null,new BSTreeNode(6,null,null)) ;
+// var left = new BSTreeNode(3,new BSTreeNode(1,null,null),null) ;
+// var right = new BSTreeNode(7,null,new BSTreeNode(6,null,null)) ;
 
-var root = new BSTreeNode(5,left,right) ;
+// var root = new BSTreeNode(5,left,right) ;
 
-preOrder(root) ;
-postOrder(root) ;
+// preOrder(root) ;
+// postOrder(root) ;
+exports.Tree = BSTreeNode ;
+exports.postOrder = postOrder ;
+

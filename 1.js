@@ -3,43 +3,9 @@
 	1.输入一棵二元查找树，将该二元查找树转换成一个排序的双向链表。
 	要求不能创建任何新的结点，只调整指针的指向。
 */
-
-var BSTreeNode = function(value,left,right){
-	this.value = value ;
-	this.left = left ;
-	this.right = right ;
-}
-var LinkedNode = function(value,next){
-	this.value = value ;
-	this.next = next ;
-}
-
-var Stack = function(){
-	this.list = [];
-	this.top = -1 ;
-}
-Stack.prototype.push = function(ele) {
-	this.list[++this.top] = ele ;
-};
-Stack.prototype.pop = function(){
-	if(this.top !== -1){
-		var ele = this.list[this.top] ;
-		this.top -- ;
-		return ele ;
-	}else{
-		return null ;
-	}
-} ;
-Stack.prototype.getTop = function(){
-	if(this.top !== -1){
-		return this.list[this.top] ;
-	}else{
-		return null ;
-	}
-} ;
-Stack.prototype.isEmpty = function(){
-	return this.top === -1 ;
-}
+var BSTreeNode = require("./tree").Tree ;
+var Stack = require("./stack").Stack ;
+var LinkedNode = require("./linkedNode").LinkedNode ;
 
 var exchange = function(tree){
 	var T = tree ;
