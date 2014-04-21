@@ -32,6 +32,25 @@ var bubbleSort = function(array){
 			break ;
 	}
 } ;
+
+var shellSort = function(array){
+	var length = array.length ;
+	var temp = 0 , j = 0;
+	for(var d = Math.floor(length/2) ; d > 0 ; d = Math.floor(d/2)){
+		
+		for(var i = d ; i < length ; i ++){
+			temp = array[i] ;
+			j = i - d ;
+			while(j >=0 && array[j] > temp){
+				array[j + d] = array[j] ;
+				j = j - d ;
+			}
+			array[j + d] = temp ;
+		}
+		console.log(d + ":" + array) ;
+	}
+}
+
 //快速排序
 var quickSort = function(array,start,end){
 	if(start < end){
@@ -108,6 +127,7 @@ var adjustTree = function(array,start,end){
 
 } ;
 
-var array = [3,2,1,44,2,1,32,15] ;
-heapSort(array) ;
+var array = [3,2,1,44,2,1,32,15,11] ;
+//heapSort(array) ;
+shellSort(array) ;
 console.log(array) ;
