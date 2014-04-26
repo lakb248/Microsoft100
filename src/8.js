@@ -3,10 +3,10 @@
 	8-3
 	用一种算法来颠倒一个链接表的顺序。现在在不用递归式的情况下做一遍
 */
-var LinkedNode = require("../DataStructure/linkedNode").LinkedNode ;
+var LinkedList = require("../DataStructure/linkedList").LinkedList ;
 
 var reverse = function(l){
-	var n1 = l ;
+	var n1 = l.head ;
 
 	if(n1 === null){
 		return ;
@@ -24,10 +24,12 @@ var reverse = function(l){
 		n2 = n3 ;
 	}
 	n2.next = n1 ;
-	return n2 ;
+	l.head = n2 ;
 }
 
-var l1 = new LinkedNode(15,new LinkedNode(22,new LinkedNode(11,new LinkedNode(4,new LinkedNode(3,new LinkedNode(6,null)))))) ;
+var l1 = new LinkedList([15,22,11,4,3,6]) ;
 console.log(l1.toString()) ;
-var head = reverse(l1) ;
-console.log(head.toString()) ;
+reverse(l1) ;
+console.log(l1.toString()) ;
+l1.deleteNode(8) ;
+console.log(l1.toString()) ;

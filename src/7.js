@@ -6,7 +6,7 @@
 	如果两个链表相交，那么从相交节点到链表尾都应该是公共的，所以先把两个链表的表尾对齐，
 	然后从较短的链表头开始比较，如果找到相同的就说明有相交，否则就没有
 */
-var LinkedNode = require("./linkedNode").LinkedNode ;
+var LinkedNode = require("../DataStructure/linkedNode").LinkedNode ;
 
 var findCrossPoint = function(l1,l2){
 	var h1 = l1,

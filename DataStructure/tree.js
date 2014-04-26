@@ -1,13 +1,11 @@
 var Stack = require("./stack").Stack ;
 
-var BSTreeNode = function(value,left,right){
-	this.value = value ;
-	this.left = left ;
-	this.right = right ;
+var Tree = function(root){
+	this.root = root ;
 }
 
-BSTreeNode.prototype.preOrder = function() {
-	var T = this ;
+Tree.prototype.preOrder = function() {
+	var T = this.root ;
 	var stack = new Stack() ;
 	if(T !== null){
 		console.log(T.value) ;
@@ -32,8 +30,8 @@ BSTreeNode.prototype.preOrder = function() {
 
 };
 
-BSTreeNode.prototype.postOrder = function(){
-	var T = this ;
+Tree.prototype.postOrder = function(){
+	var T = this.root ;
 	var stack = new Stack() ;
 	var tag ;
 	while(T !== null || !stack.isEmpty()){
@@ -54,13 +52,4 @@ BSTreeNode.prototype.postOrder = function(){
 	}
 }
 
-//var left = new BSTreeNode(3,new BSTreeNode(1,null,null),null) ;
-//var right = new BSTreeNode(7,null,new BSTreeNode(6,null,null)) ;
-
-//var root = new BSTreeNode(5,left,right) ;
-//root.preOrder();
-// preOrder(root) ;
-// postOrder(root) ;
-exports.Tree = BSTreeNode ;
-exports.postOrder = postOrder ;
-
+exports.Tree = Tree ;

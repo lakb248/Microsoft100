@@ -5,13 +5,7 @@ var LinkedNode = function(value,next){
 }
 
 LinkedNode.prototype.toString = function(){
-	var head = this ;
-	var str = "" ;
-	while(head != null){
-		str += head.value + " " ;
-		head = head.next ;
-	}
-	return str ;
+	return this.value.toString() ;
 }
 
 exports.LinkedNode = LinkedNode ;

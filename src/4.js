@@ -4,9 +4,9 @@
 	从树的根结点开始往下访问一直到叶结点所经过的所有结点形成一条路径。
 	打印出和与输入整数相等的所有路径。
 */
-var Tree = require("./tree").Tree ;
-var Stack = require("./stack").Stack ;
-var postOrder = require("./tree").postOrder ;
+var BSTreeNode = require("../DataStructure/treeNode").BSTreeNode ;
+var Tree = require("../DataStructure/tree").Tree ;
+var Stack = require("../DataStructure/stack").Stack ;
 
 var outputSumRoute = function(T,sum){
 	var stack = new Stack() ,
@@ -41,9 +41,10 @@ var outputSumRoute = function(T,sum){
 		}
 	}
 }
-var left = new Tree(2,new Tree(1,null,null),new Tree(1,null,null)) ;
-var right = new Tree(1,new Tree(2,null,null),new Tree(2,null,null)) ;
+var left = new BSTreeNode(2,new BSTreeNode(1,null,null),new BSTreeNode(1,null,null)) ;
+var right = new BSTreeNode(1,new BSTreeNode(2,null,null),new BSTreeNode(2,null,null)) ;
 
-var root = new Tree(1,left,right) ;
+var root = new BSTreeNode(1,left,right) ;
+var tree = new Tree(root) ;
 //postOrder(root) ;
-outputSumRoute(root,4) ;
+outputSumRoute(tree.root,4) ;
