@@ -2,6 +2,11 @@ var Stack = function(){
 	this.list = [];
 	this.top = -1 ;
 } ;
+
+Stack.prototype.getLength = function(){
+	return this.top + 1 ;
+}
+
 Stack.prototype.push = function(ele) {
 	this.list[++this.top] = ele ;
 };

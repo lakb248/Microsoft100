@@ -30,6 +30,22 @@ Tree.prototype.preOrder = function() {
 
 };
 
+Tree.prototype.midOrder = function(){
+	var T = this.root ;
+	var stack = new Stack() ;
+	
+	while(T !== null || !stack.isEmpty()){
+		while(T !== null){
+			stack.push(T) ;
+			T = T.left ;
+		}
+
+		T = stack.pop() ;
+		console.log(T.value) ;
+		T = T.right ; 
+	}
+}
+
 Tree.prototype.postOrder = function(){
 	var T = this.root ;
 	var stack = new Stack() ;
